@@ -1,5 +1,8 @@
 "use client";
+import { useRouter } from "next/navigation";
 import { Button } from "./ui/button";
+import { toast } from "sonner";
+import { ArrowLeft, ConstructionIcon, Hammer, Timer } from "lucide-react";
 
 export const handleScrollToSection = (sectionId) => {
   const section = document.getElementById(sectionId);
@@ -9,6 +12,7 @@ export const handleScrollToSection = (sectionId) => {
 };
 
 const Header = () => {
+  const { push } = useRouter();
   return (
     <header className="border-b border-gray-100 bg-white/80 backdrop-blur-md sticky top-0 z-40">
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between py-4">
@@ -42,8 +46,8 @@ const Header = () => {
           </li>
         </nav>
         <div>
-          <Button className="rounded-full bg-expense-600 hover:bg-expense-700 text-white px-4 py-2 text-sm font-medium">
-            Try Demo
+          <Button className="rounded-full  text-white px-4 py-2 text-sm font-medium">
+            <Timer className="size-5 white" /> Demo Available Soon
           </Button>
         </div>
       </div>

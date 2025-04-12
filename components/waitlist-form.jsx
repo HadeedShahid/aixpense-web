@@ -51,37 +51,40 @@ const WaitListForm = () => {
   });
 
   return (
-    <Form {...form} className="flex flex-col sm:flex-row gap-3 pt-3">
-      <form onSubmit={form.handleSubmit(onSubmit)} className="relative flex-1">
-        <FormField
-          control={form.control}
-          name="email"
-          render={({ field }) => (
-            <FormItem>
-              <FormControl>
-                <Input
-                  {...field}
-                  type="email"
-                  placeholder="Enter your email"
-                  className="rounded-full pr-24 bg-white/80 border-gray-200 focus:border-expense-500 h-12"
-                />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <Button
-          type="submit"
-          className="absolute right-1 top-1 rounded-full bg-expense-600 hover:bg-expense-700 text-white h-10"
-        >
-          {loading ? (
-            <Loader2 className="animate-spin" />
-          ) : (
-            <>
-              Join Waitlist <ArrowRight className="ml-1 h-4 w-4" />
-            </>
-          )}
-        </Button>
+    <Form {...form}>
+      <form onSubmit={form.handleSubmit(onSubmit)}>
+        <div className="relative flex-1 w-full md:w-11/12">
+          <FormField
+            className
+            control={form.control}
+            name="email"
+            render={({ field }) => (
+              <FormItem>
+                <FormControl>
+                  <Input
+                    {...field}
+                    type="email"
+                    placeholder="Enter your email"
+                    className="rounded-full pr-24 bg-white/80 border-gray-200 focus:border-expense-500 h-12"
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <Button
+            type="submit"
+            className="absolute right-1 top-1 rounded-full bg-expense-600 hover:bg-expense-700 text-white h-10"
+          >
+            {loading ? (
+              <Loader2 className="animate-spin" />
+            ) : (
+              <>
+                Join Waitlist <ArrowRight className="ml-1 h-4 w-4" />
+              </>
+            )}
+          </Button>
+        </div>
       </form>
     </Form>
   );
