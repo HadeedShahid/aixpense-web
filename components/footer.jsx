@@ -1,5 +1,7 @@
+"use client";
 import React from "react";
 import { Instagram, Twitter, Facebook, Github } from "lucide-react";
+import { handleScrollToSection } from "./header";
 
 const FooterSection = () => {
   return (
@@ -46,20 +48,29 @@ const FooterSection = () => {
           <div>
             <h4 className="font-bold mb-4">Product</h4>
             <ul className="space-y-2">
-              <li>
-                <a href="#" className="text-gray-600 hover:text-expense-600">
-                  Features
-                </a>
+              <li
+                onClick={() => {
+                  handleScrollToSection("features");
+                }}
+                className="text-gray-600 hover:text-expense-600 cursor-pointer"
+              >
+                Features
               </li>
-              <li>
-                <a href="#" className="text-gray-600 hover:text-expense-600">
-                  Pricing
-                </a>
+              <li
+                onClick={() => {
+                  handleScrollToSection("testimonials");
+                }}
+                className="text-gray-600 hover:text-expense-600 cursor-pointer"
+              >
+                Pricing
               </li>
-              <li>
-                <a href="#" className="text-gray-600 hover:text-expense-600">
-                  FAQ
-                </a>
+              <li
+                onClick={() => {
+                  handleScrollToSection("faqs");
+                }}
+                className="text-gray-600 hover:text-expense-600 cursor-pointer"
+              >
+                FAQs
               </li>
             </ul>
           </div>

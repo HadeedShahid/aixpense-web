@@ -1,7 +1,10 @@
+"use client";
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { ArrowRight, BarChart3, LineChart, PieChart } from "lucide-react";
+import { motion } from "framer-motion";
+import WaitListForm from "./waitlist-form";
 
 const HeroSection = () => {
   return (
@@ -9,7 +12,7 @@ const HeroSection = () => {
       <div className="container px-4 md:px-6 py-16 md:py-24 mx-auto">
         <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
           <div className="space-y-4">
-            <div className="inline-block px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-sm font-medium mb-2">
+            <div className="inline-block px-3 py-1 rounded-full bg-expense-100 text-expense-700 text-sm font-medium mb-2">
               Coming Soon
             </div>
             <h1 className="text-3xl md:text-5xl font-bold font-display">
@@ -20,28 +23,26 @@ const HeroSection = () => {
               An AI chatbot that makes tracking expenses as easy as texting. No
               more spreadsheets, no more data entry.
             </p>
-
-            <div className="flex flex-col sm:flex-row gap-3 pt-3">
-              <div className="relative flex-1">
-                <Input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="rounded-full pr-24 bg-white/80 border-gray-200 focus:border-expense-500 h-12"
-                />
-                <Button className="absolute right-1 top-1 rounded-full  text-white h-10">
-                  Join Waitlist <ArrowRight className="ml-1 h-4 w-4" />
-                </Button>
-              </div>
-            </div>
+            <WaitListForm />
             <p className="text-sm text-gray-500">
               Join 1,200+ early adopters. No spam, ever.
             </p>
           </div>
 
-          <div className="relative mx-auto lg:mr-0 animate-floating w-full max-w-[550px]">
+          <motion.div
+            className="relative mx-auto lg:mr-0 w-full max-w-[550px]"
+            animate={{
+              y: [0, -10, 0],
+            }}
+            transition={{
+              duration: 3,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          >
             <div className="chat-container rounded-2xl p-5 shadow-xl w-full">
               <div className="flex flex-col gap-3">
-                <div className="self-end bg-blue-300 py-3 px-4 rounded-2xl rounded-tr-none">
+                <div className="self-end bg-expense-300 py-3 px-4 rounded-2xl rounded-tr-none">
                   <p className="text-sm">I spent $5 on bananas yesterday.</p>
                 </div>
                 <div className="self-start bg-white py-3 px-4 rounded-2xl rounded-tl-none shadow-sm max-w-[90%]">
@@ -49,7 +50,7 @@ const HeroSection = () => {
                     Got it! Added $5 to Groceries on April 8.
                   </p>
                 </div>
-                <div className="self-end bg-blue-300 py-3 px-4 rounded-2xl rounded-tr-none">
+                <div className="self-end bg-expense-300 py-3 px-4 rounded-2xl rounded-tr-none">
                   <p className="text-sm">
                     How much did I spend on food this week?
                   </p>
@@ -60,7 +61,7 @@ const HeroSection = () => {
                     last week!
                   </p>
 
-                  {/* Add detailed chart visualization */}
+                  {/* Horizontal bar chart visualization - now showing only 4 days */}
                   <div className="mt-3 bg-white rounded-lg p-3 border border-gray-100">
                     <div className="flex items-center justify-between mb-2">
                       <span className="text-xs font-medium">
@@ -73,62 +74,45 @@ const HeroSection = () => {
                       </div>
                     </div>
 
-                    {/* Simple bar chart visualization */}
-                    <div className="flex items-end h-24 gap-1 mt-1">
-                      <div className="flex-1 flex flex-col items-center">
+                    {/* Horizontal bar chart - reduced to 4 days */}
+                    <div className="space-y-2 mt-2">
+                      <div className="flex items-center gap-2">
+                        <span className="text-xs w-8">Mon</span>
                         <div
-                          className="w-full bg-blue-200 rounded-t-sm"
-                          style={{ height: "40%" }}
+                          className="h-5 bg-expense-200 rounded-sm"
+                          style={{ width: "40%" }}
                         ></div>
-                        <span className="text-[10px] mt-1">Mon</span>
+                        <span className="text-xs text-gray-500">$12.40</span>
                       </div>
-                      <div className="flex-1 flex flex-col items-center">
+                      <div className="flex items-center gap-2">
+                        <span className="text-xs w-8">Wed</span>
                         <div
-                          className="w-full bg-blue-300 rounded-t-sm"
-                          style={{ height: "70%" }}
+                          className="h-5 bg-expense-400 rounded-sm"
+                          style={{ width: "30%" }}
                         ></div>
-                        <span className="text-[10px] mt-1">Tue</span>
+                        <span className="text-xs text-gray-500">$9.25</span>
                       </div>
-                      <div className="flex-1 flex flex-col items-center">
+                      <div className="flex items-center gap-2">
+                        <span className="text-xs w-8">Fri</span>
                         <div
-                          className="w-full bg-blue-400 rounded-t-sm"
-                          style={{ height: "30%" }}
+                          className="h-5 bg-expense-600 rounded-sm"
+                          style={{ width: "90%" }}
                         ></div>
-                        <span className="text-[10px] mt-1">Wed</span>
+                        <span className="text-xs text-gray-500">$27.80</span>
                       </div>
-                      <div className="flex-1 flex flex-col items-center">
+                      <div className="flex items-center gap-2">
+                        <span className="text-xs w-8">Sun</span>
                         <div
-                          className="w-full bg-blue-500 rounded-t-sm"
-                          style={{ height: "50%" }}
+                          className="h-5 bg-expense-300 rounded-sm"
+                          style={{ width: "20%" }}
                         ></div>
-                        <span className="text-[10px] mt-1">Thu</span>
-                      </div>
-                      <div className="flex-1 flex flex-col items-center">
-                        <div
-                          className="w-full bg-blue-600 rounded-t-sm"
-                          style={{ height: "90%" }}
-                        ></div>
-                        <span className="text-[10px] mt-1">Fri</span>
-                      </div>
-                      <div className="flex-1 flex flex-col items-center">
-                        <div
-                          className="w-full bg-blue-400 rounded-t-sm"
-                          style={{ height: "60%" }}
-                        ></div>
-                        <span className="text-[10px] mt-1">Sat</span>
-                      </div>
-                      <div className="flex-1 flex flex-col items-center">
-                        <div
-                          className="w-full bg-blue-300 rounded-t-sm"
-                          style={{ height: "20%" }}
-                        ></div>
-                        <span className="text-[10px] mt-1">Sun</span>
+                        <span className="text-xs text-gray-500">$6.20</span>
                       </div>
                     </div>
                   </div>
                 </div>
 
-                <div className="self-end bg-blue-300 py-3 px-4 rounded-2xl rounded-tr-none">
+                <div className="self-end bg-expense-300 py-3 px-4 rounded-2xl rounded-tr-none">
                   <p className="text-sm">
                     What are my top spending categories?
                   </p>
@@ -181,11 +165,11 @@ const HeroSection = () => {
                       {/* Legend */}
                       <div className="ml-4 text-xs space-y-1 flex-1">
                         <div className="flex items-center">
-                          <div className="w-3 h-3 bg-blue-600 rounded-sm mr-2"></div>
+                          <div className="w-3 h-3 bg-expense-600 rounded-sm mr-2"></div>
                           <span>Groceries (35%)</span>
                         </div>
                         <div className="flex items-center">
-                          <div className="w-3 h-3 bg-blue-400 rounded-sm mr-2"></div>
+                          <div className="w-3 h-3 bg-expense-400 rounded-sm mr-2"></div>
                           <span>Dining (20%)</span>
                         </div>
                         <div className="flex items-center">
@@ -193,7 +177,7 @@ const HeroSection = () => {
                           <span>Utilities (15%)</span>
                         </div>
                         <div className="flex items-center">
-                          <div className="w-3 h-3 bg-blue-300 rounded-sm mr-2"></div>
+                          <div className="w-3 h-3 bg-expense-300 rounded-sm mr-2"></div>
                           <span>Entertainment (30%)</span>
                         </div>
                       </div>
@@ -202,8 +186,19 @@ const HeroSection = () => {
                 </div>
               </div>
             </div>
-            <div className="absolute -z-10 -bottom-4 -right-4 w-full h-full bg-accent/20 rounded-2xl"></div>
-          </div>
+            <div
+              style={{
+                position: "absolute",
+                zIndex: "-10",
+                bottom: "-16px",
+                right: "-16px",
+                width: "100%",
+                height: "100%",
+                backgroundColor: "rgba(51, 218, 135, 0.2)",
+                borderRadius: "16px",
+              }}
+            ></div>
+          </motion.div>
         </div>
       </div>
     </section>

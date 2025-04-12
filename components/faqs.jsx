@@ -36,7 +36,7 @@ const faqs = [
 
 const FAQSection = () => {
   return (
-    <section className="py-16 md:py-24 bg-expense-50">
+    <section id="faqs" className="py-16 md:py-24 bg-expense-50">
       <div className="container px-4 md:px-6 mx-auto">
         <div className="text-center max-w-[800px] mx-auto mb-12">
           <h2 className="text-2xl md:text-4xl font-bold font-display mb-4">
@@ -55,7 +55,7 @@ const FAQSection = () => {
                 value={`item-${i}`}
                 className="border-b border-gray-200"
               >
-                <AccordionTrigger className="text-left font-medium py-4 hover:no-underline">
+                <AccordionTrigger className="text-left font-medium py-4 hover:no-underline text-md">
                   {faq.question}
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-600 pb-4">
