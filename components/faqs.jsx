@@ -8,27 +8,27 @@ import {
 
 const faqs = [
   {
-    question: "When will aiexpense be available?",
+    question: "When will expainse be available?",
     answer:
-      "We're planning to launch our beta in Q3 2025, with priority access given to those on our waitlist. Sign up now to be among the first to experience aiexpense.",
+      "We're planning to launch our beta in Q3 2025, with priority access given to those on our waitlist. Sign up now to be among the first to experience expainse.",
   },
   {
     question: "Is my financial data secure?",
     answer:
-      "Absolutely! We use bank-level encryption to protect your data. aiexpense never stores your actual banking credentials, and all conversations are encrypted end-to-end.",
+      "Absolutely! We use bank-level encryption to protect your data. expainse never stores your actual banking credentials, and all conversations are encrypted end-to-end.",
   },
   {
     question: "Do I need to connect my bank account?",
     answer:
-      "No, connecting your bank account is completely optional. You can use aiexpense as a standalone expense tracker by simply chatting with our AI about your expenses.",
+      "No, connecting your bank account is completely optional. You can use expainse as a standalone expense tracker by simply chatting with our AI about your expenses.",
   },
   {
     question: "Is there a subscription fee?",
     answer:
-      "aiexpense will offer both free and premium tiers. The basic tracking features will always be free, while advanced insights and integrations will be part of our premium plan.",
+      "expainse will offer both free and premium tiers. The basic tracking features will always be free, while advanced insights and integrations will be part of our premium plan.",
   },
   {
-    question: "Will aiexpense work with my existing budgeting system?",
+    question: "Will expainse work with my existing budgeting system?",
     answer:
       "We're working on integrations with popular financial tools and services. If you have a specific request, please let us know after signing up for the waitlist!",
   },
@@ -43,7 +43,7 @@ const FAQSection = () => {
             Frequently Asked Questions
           </h2>
           <p className="text-gray-600 text-lg">
-            Get answers to common questions about aiexpense.
+            Get answers to common questions about expainse.
           </p>
         </div>
 

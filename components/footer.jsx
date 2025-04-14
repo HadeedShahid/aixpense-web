@@ -10,7 +10,7 @@ const FooterSection = () => {
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           <div>
             <h3 className="text-gradient font-display text-xl font-bold mb-4">
-              aiexpense
+              expainse
             </h3>
             <p className="text-gray-600 mb-4">Your finances, one chat away.</p>
             <div className="flex space-x-4">
@@ -104,16 +104,14 @@ const FooterSection = () => {
           <div>
             <h4 className="font-bold mb-4">Contact</h4>
             <ul className="space-y-2">
-              <li className="text-gray-600">hello@aiexpense.ai</li>
+              <li className="text-gray-600">hello@expainse.ai</li>
               <li className="text-gray-600">San Francisco, CA</li>
             </ul>
           </div>
         </div>
 
         <div className="mt-12 pt-8 border-t border-gray-200 text-center md:flex md:justify-between md:text-left">
-          <p className="text-gray-500">
-            © 2025 aiexpense. All rights reserved.
-          </p>
+          <p className="text-gray-500">© 2025 expainse. All rights reserved.</p>
           <p className="text-gray-500 mt-2 md:mt-0">
             Launching Soon on iOS & Android
           </p>

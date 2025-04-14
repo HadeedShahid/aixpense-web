@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 const testimonials = [
   {
     quote:
-      "aiexpense has completely changed how I track my spending. It's like having a personal finance assistant in my pocket.",
+      "expainse has completely changed how I track my spending. It's like having a personal finance assistant in my pocket.",
     name: "Alex Johnson",
     title: "Marketing Manager",
     avatar:
@@ -38,7 +38,7 @@ const TestimonialsSection = () => {
             Loved by early users
           </h2>
           <p className="text-gray-600 text-lg">
-            Here's what our beta testers have to say about aiexpense.
+            Here's what our beta testers have to say about expainse.
           </p>
         </div>
 
