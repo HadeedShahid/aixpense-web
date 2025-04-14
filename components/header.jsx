@@ -17,7 +17,7 @@ const Header = () => {
     <header className="border-b border-gray-100 bg-white/80 backdrop-blur-md sticky top-0 z-40">
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between py-4">
         <div className="text-gradient font-display text-2xl font-bold">
-          aixpense
+          expainse
         </div>
         <nav className="hidden md:flex items-center space-x-6 list-none">
           <li

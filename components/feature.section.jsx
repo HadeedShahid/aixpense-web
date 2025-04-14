@@ -34,7 +34,7 @@ const FeaturesSection = () => {
             Expense tracking that feels like a conversation
           </h2>
           <p className="text-gray-600 text-lg">
-            No more complicated apps. aixpense brings the simplicity of chat to
+            No more complicated apps. expainse brings the simplicity of chat to
             personal finance.
           </p>
         </div>
