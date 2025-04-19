@@ -2,7 +2,13 @@
 import { useRouter } from "next/navigation";
 import { Button } from "./ui/button";
 import { toast } from "sonner";
-import { ArrowLeft, ConstructionIcon, Hammer, Timer } from "lucide-react";
+import {
+  ArrowLeft,
+  ConstructionIcon,
+  Hammer,
+  Sparkle,
+  Timer,
+} from "lucide-react";
 
 export const handleScrollToSection = (sectionId) => {
   const section = document.getElementById(sectionId);
@@ -46,8 +52,15 @@ const Header = () => {
           </li>
         </nav>
         <div>
-          <Button className="rounded-full  text-white px-4 py-2 text-sm font-medium">
-            <Timer className="size-5 white" /> Demo Available Soon
+          <Button
+            onClick={() => {
+              window.location.href =
+                "https://preview--expense-whisper-ai.lovable.app/dashboard";
+            }}
+            className="cursor-pointer rounded-full px-4 py-2 text-sm font-medium bg-gradient-to-r from-[#4e94fb] to-[#33da87]"
+          >
+            <Sparkle className="size-5" /> Try Demo{" "}
+            <Sparkle className="size-5" />
           </Button>
         </div>
       </div>
